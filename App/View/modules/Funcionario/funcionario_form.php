@@ -12,7 +12,7 @@
     <form action="/funcionario/save" method="post">
         <fieldset>
             
-            <legend>Cadastro de Funcionário</legend>
+            <legend>Cadastro de Funcionários</legend>
             <input type="hidden" value="<?= $model->id ?>" name="id" />
 
             <label for="nome">Nome:</label>
