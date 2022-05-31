@@ -7,9 +7,9 @@ class FuncionarioDAO
 
     function __construct()
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
+        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
 
-        $this->conexao = new PDO($dsn, 'root', 'etecjau');
+        $this->conexao = new PDO($dsn, 'root', '1234');
     }
 
     public function insert(FuncionarioModel $model)
