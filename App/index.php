@@ -9,7 +9,7 @@ include 'Controller/FuncionarioController.php';
 
 switch($uri_parse)
 {
-    # Pessoa
+    # Rotas Pessoa
     case '/pessoa':
         PessoaController::index();
     break;
@@ -26,7 +26,7 @@ switch($uri_parse)
         PessoaController::delete();
     break;
 
-    # Produto
+    # Rotas Produto
     case '/produto':
         ProdutoController::lista();
     break;
@@ -43,7 +43,7 @@ switch($uri_parse)
         ProdutoController::delete();
     break;
 
-    # Categoria Produto
+    # Rotas Categoria Produto
     case '/categoriaproduto':
         CategoriaProdutoController::lista();
     break;
@@ -60,7 +60,7 @@ switch($uri_parse)
         CategoriaProdutoController::delete();
     break;
 
-    # Funcionário
+    # Rotas Funcionário
 
     case '/funcionario':
         FuncionarioController::lista();
