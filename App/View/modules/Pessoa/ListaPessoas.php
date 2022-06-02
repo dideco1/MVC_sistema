@@ -6,13 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Pessoas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body{
+        background-color: black;
+        font-size: 20px;
+        font-family:serif;
+
+    }
+    legend{
+        color:white;
+        font-size: 45px;
+    }
+    th{
+        color: white;
+        text-align:center;
+    }
+    td{
+        color: #CA2400;
+        text-align:center;
+    }
+    a:hover{
+        color:#CA2400;
+    }
+    a:active{
+        color:white;
+    }
+    button{
+        position:absolute;
+        top: 0px;
+        color:white;
+        background-color:grey;
+    }
+    </style>
+    
 </head>
 <body>
     <center>
         <legend> Lista de Pessoas </legend>
         <table border="2">
             <tr>
-                <th></th>
+                <th>&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                 <th>ID</th>
                 <th>Nome</th>
                 <th>RG</th>
@@ -27,13 +60,13 @@
             <tr>
                 <td> <a href="/pessoa/delete?id=<?= $item['id'] ?>">X</a> </td>
                 <td><?= $item['id'] ?></td>
-                <td> <a href="/pessoa/form?id=<?= $item['id'] ?>"> <?= $item['nome'] ?> </a> </td>
-                <td><?= $item['rg'] ?></td>
-                <td><?= $item['cpf'] ?></td>
-                <td><?= $item['data_nascimento'] ?></td>
-                <td><?= $item['email'] ?></td>
-                <td><?= $item['telefone'] ?></td>
-                <td><?= $item['endereco'] ?></td>
+                <td>&nbsp<a href="/pessoa/form?id=<?= $item['id'] ?>"> <?= $item['nome'] ?> </a>&nbsp</td>
+                <td>&nbsp<?= $item['rg'] ?>&nbsp</td>
+                <td>&nbsp<?= $item['cpf'] ?>&nbsp</td>
+                <td>&nbsp<?= $item['data_nascimento'] ?>&nbsp</td>
+                <td>&nbsp<?= $item['email'] ?>&nbsp</td>
+                <td>&nbsp<?= $item['telefone'] ?>&nbsp</td>
+                <td>&nbsp<?= $item['endereco'] ?>&nbsp</td>
 
             </tr>
             <?php endforeach ?>
@@ -49,4 +82,7 @@
 
         </table>
     </center>
+    <a href="/">
+        <button> Voltar </button>
+    </a>
 </body>

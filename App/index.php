@@ -76,19 +76,12 @@ switch($uri_parse)
 
     case '/funcionario/delete':
         FuncionarioController::delete();
-    break;
-
+    break;  
+      
     
-
-        
-    
-    
-    
-
-
  
 
     default:
-        echo "erro 404";
+        include 'menu.php';
     break;
 }
