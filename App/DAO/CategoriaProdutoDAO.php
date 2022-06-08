@@ -6,8 +6,8 @@ class CategoriaProdutoDAO
 
     function __construct()
     {
-        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
-        $this->conexao = new PDO($dsn, 'root', '1234');
+        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
+        $this->conexao = new PDO($dsn, 'root', 'etecjau');
     }
 
     public function insert(CategoriaProdutoModel $model)
