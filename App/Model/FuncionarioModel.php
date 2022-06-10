@@ -1,4 +1,6 @@
 <?php
+namespace App\Model;
+use App\DAO\FuncionarioDAO;
 
 
 class FuncionarioModel

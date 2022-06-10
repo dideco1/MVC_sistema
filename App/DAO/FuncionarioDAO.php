@@ -1,4 +1,7 @@
 <?php
+namespace App\DAO;
+use \PDO;
+use App\Model\FuncionarioModel;
 
 
 class FuncionarioDAO
@@ -7,9 +10,9 @@ class FuncionarioDAO
 
     function __construct()
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
+        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
 
-        $this->conexao = new PDO($dsn, 'root', 'etecjau');
+        $this->conexao = new PDO($dsn, 'root', '1234');
     }
 
     public function insert(FuncionarioModel $model)
@@ -59,7 +62,7 @@ class FuncionarioDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("FuncionarioModel");
+        return $stmt->fetchObject("App\Model\FuncionarioModel");
     }
 
     public function delete(int $id)

@@ -1,4 +1,6 @@
 <?php
+namespace App\Controller;
+use App\Model\FuncionarioModel;
 
 
 class FuncionarioController

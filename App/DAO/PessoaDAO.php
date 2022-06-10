@@ -1,4 +1,7 @@
 <?php
+namespace App\DAO;
+use App\Model\PessoaModel;
+use \PDO;
 
 class PessoaDAO
 {
@@ -7,9 +10,9 @@ class PessoaDAO
 
     function __construct() 
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
+        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
         
-        $this->conexao = new PDO($dsn, 'root', 'etecjau');
+        $this->conexao = new PDO($dsn, 'root', '1234');
     }
 
     function insert(PessoaModel $model) 
@@ -64,7 +67,7 @@ class PessoaDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("PessoaModel");
+        return $stmt->fetchObject("App\Model\PessoaModel");
     }
 
     public function delete(int $id)

@@ -1,4 +1,7 @@
 <?php
+namespace App\DAO;
+use \PDO;
+use App\Model\ProdutoModel;
 
 class ProdutoDAO
 {
@@ -6,9 +9,9 @@ class ProdutoDAO
 
     function __construct()
     {
-        $dsn = "mysql:host=localhost:3307;dbname=db_sistema";
+        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
 
-        $this->conexao = new PDO($dsn, 'root', 'etecjau');
+        $this->conexao = new PDO($dsn, 'root', '1234');
     }
 
     public function insert(ProdutoModel $model)
@@ -60,7 +63,7 @@ class ProdutoDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("ProdutoModel");
+        return $stmt->fetchObject("App\Model\ProdutoModel");
     }
 
     public function delete(int $id)
