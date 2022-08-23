@@ -1,9 +1,11 @@
 <?php
 include 'autoload.php';
-use App\Controller\PessoaController;
-use App\Controller\CategoriaProdutoController;
-use App\Controller\ProdutoController;
-use App\Controller\FuncionarioController;
+use App\Controller\{
+    PessoaController,
+    ProdutoController,
+    CategoriaProdutoController,
+    FuncionarioController
+};
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
