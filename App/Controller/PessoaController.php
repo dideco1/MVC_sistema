@@ -10,7 +10,7 @@ class PessoaController extends Controller
         $model = new PessoaModel();
         $model->getAllRows();
 
-        parent::render('Pessoa/ListaPessoas');
+        parent::render('Pessoa/ListaPessoas', $model);
 
     }
 

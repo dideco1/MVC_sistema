@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class Model
+abstract class Model
 {
     public $rows;
 }

@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-class Controller
+abstract class Controller
 {
     protected static function render($view, $model = null)
     {
-        $arquivo_view = "View/modules/$view.php";
+        $arquivo_view = app_views . $view . ".php";
 
         if(file_exists($arquivo_view))
         {

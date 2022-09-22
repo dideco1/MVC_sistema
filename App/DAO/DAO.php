@@ -3,14 +3,14 @@
 namespace App\DAO;
 use \PDO;
 
-class DAO
+abstract class DAO
 {
     protected $conexao;
 
     public function __construct()
     {
-        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
+        $dsn = "mysql:host=" . $_ENV['db']['host'] . ";dbname=". $_ENV['db']['database'] . "";
 
-        $this->conexao = new PDO($dsn, 'root', '1234');
+        $this->conexao = new PDO($dsn, $_ENV['db']['user'], $_ENV['db']['pass']);
     }
 }
