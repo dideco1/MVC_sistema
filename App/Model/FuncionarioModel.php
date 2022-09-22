@@ -3,9 +3,9 @@ namespace App\Model;
 use App\DAO\FuncionarioDAO;
 
 
-class FuncionarioModel
+class FuncionarioModel extends Model
 {
-    public $id, $nome, $salario, $cargo, $rows;
+    public $id, $nome, $salario, $cargo;
 
     public function save()
     {

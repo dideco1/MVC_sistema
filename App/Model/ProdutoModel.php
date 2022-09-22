@@ -2,11 +2,9 @@
 namespace App\Model;
 use App\DAO\ProdutoDAO;
 
-class ProdutoModel
+class ProdutoModel extends Model
 {
     public $id, $nome, $preco, $descricao, $id_categoria;
-
-    public $rows;
 
     public function save()
     {

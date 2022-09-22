@@ -3,7 +3,7 @@ namespace App\Controller;
 use App\Model\FuncionarioModel;
 
 
-class FuncionarioController
+class FuncionarioController extends Controller
 {
 
     public static function lista()
@@ -12,7 +12,7 @@ class FuncionarioController
         $model = new FuncionarioModel();
         $model->getAllRows();
 
-        include 'View/modules/Funcionario/funcionario_lista.php';
+        parent::render('Funcionario/funcionario_lista', $model);
     }
 
     public static function form()
@@ -24,8 +24,8 @@ class FuncionarioController
         {
             $model = $model->getById( (int) $_GET['id']);
         }
-
-        include 'View/modules/Funcionario/funcionario_form.php';
+        
+        parent::render('Funcionario/funcionario_form');
     }
 
     public static function save()

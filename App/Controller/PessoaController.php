@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Model\PessoaModel;
 
-class PessoaController 
+class PessoaController extends Controller
 {
 
     public static function index() 
@@ -10,7 +10,7 @@ class PessoaController
         $model = new PessoaModel();
         $model->getAllRows();
 
-        include 'View/modules/Pessoa/ListaPessoas.php';
+        parent::render('Pessoa/ListaPessoas');
 
     }
 
@@ -23,8 +23,8 @@ class PessoaController
         {
             $model = $model->getById( (int) $_GET['id']);
         }
-        
-        include 'View/modules/Pessoa/FormPessoa.php';
+
+        parent::render('Pessoa/FormPessoa', $model);
     }
 
     public static function save() {

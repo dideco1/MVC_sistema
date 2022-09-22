@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Model\ProdutoModel;
 
-class ProdutoController
+class ProdutoController extends Controller
 {
     public static function lista()
     {
@@ -10,7 +10,7 @@ class ProdutoController
         $model = new ProdutoModel();
         $model->getAllRows();
 
-        include 'View\modules\Produto\produtolista.php';
+        parent::render('Produto\produtolista', $model);       
     }
 
     public static function form()
@@ -23,7 +23,7 @@ class ProdutoController
             $model = $model->getById( (int) $_GET['id']);
         }
 
-        include 'View\modules\Produto\produtoform.php';
+        parent::render('Produto\produtoform', $model);
     }
 
     public static function save()

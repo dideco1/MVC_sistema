@@ -3,7 +3,7 @@ namespace App\Controller;
 use App\Model\CategoriaProdutoModel;
 
 
-class CategoriaProdutoController
+class CategoriaProdutoController extends Controller
 {
     public static function lista()
     {
@@ -11,7 +11,7 @@ class CategoriaProdutoController
         $model = new CategoriaProdutoModel();
         $model->getAllRows();
 
-        include 'View/modules/Categoria_produto/categoriaproduto_lista.php';        
+        parent::render('Categoria_Produto/categoriaproduto_lista', $model);   
     }
 
     public static function form()
@@ -24,7 +24,7 @@ class CategoriaProdutoController
             $model = $model->getById( (int) $_GET['id']);
         }
 
-        include 'View/modules/Categoria_produto/categoriaproduto_form.php';
+        parent::render('Categoria_produto/categoriaproduto_form', $model);
     }
 
     public static function save()

@@ -1,18 +1,13 @@
 <?php
 namespace App\DAO;
 use App\Model\PessoaModel;
-use \PDO;
 
-class PessoaDAO
+class PessoaDAO extends DAO
 {
-
-    private $conexao;
 
     function __construct() 
     {
-        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
-        
-        $this->conexao = new PDO($dsn, 'root', '1234');
+        parent::__construct();
     }
 
     function insert(PessoaModel $model) 

@@ -1,17 +1,13 @@
 <?php
 namespace App\DAO;
-use \PDO;
 use App\Model\ProdutoModel;
 
-class ProdutoDAO
+class ProdutoDAO extends DAO
 {
-    private $conexao;
 
     function __construct()
     {
-        $dsn = "mysql:host=localhost:3306;dbname=db_sistema";
-
-        $this->conexao = new PDO($dsn, 'root', '1234');
+        parent::__construct();
     }
 
     public function insert(ProdutoModel $model)
@@ -63,7 +59,7 @@ class ProdutoDAO
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("App\Model\ProdutoModel");
+        return $stmt->fetchObject("ProdutoModel");
     }
 
     public function delete(int $id)
