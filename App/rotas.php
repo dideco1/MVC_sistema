@@ -78,12 +78,5 @@ switch($uri_parse)
 
     case '/funcionario/delete':
         FuncionarioController::delete();
-    break;  
-      
-    
- 
-
-    default:
-        include 'menu.php';
-    break;
+    break;    
 }
